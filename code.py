@@ -85,4 +85,18 @@ today = pd.Timestamp.today()
 
 days_left = (expiry_date - today).days
 
-
+if days_left < 0:
+    print("❌ Medicine has expired.")
+elif days_left <= 30:
+    print(f"⚠ Medicine will expire in {days_left} days.")
+else:
+    print(f"✅ Expiry OK ({days_left} days remaining).")
+print("\n========================================\n")   
+#expiry date check
+if days_left<=0:
+    print("\n⚠️  The medicine has expired.")    
+elif days_left<=30:
+    print("\n⚠️  The medicine is nearing its expiry date. Consider using it soon or reordering.")   
+else:
+    print("\n✅ The medicine is within its expiry date.")
+    
