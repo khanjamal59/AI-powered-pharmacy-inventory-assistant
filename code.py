@@ -65,7 +65,7 @@ if not result.empty:
     print("Last Updated  :", row["Last_Updated"])
 
 else:
-    print("\n❌ Medicine not found.")
+    print("\n Medicine not found.")
 print("\n========================================\n")   
 
 #===================checking the inventory status ===
@@ -73,30 +73,30 @@ stock = int(row["Stock"])
 reorder_level = int(row["Reorder_Level"])
 price = float(row["Price_NPR"])
 if stock==0:
-    print("\n⚠️  The medicine is out of stock.")
+    print("\n The medicine is out of stock.")
 elif stock<=reorder_level:
-    print("\n⚠️  The medicine stock is low. Consider reordering.")      
+    print("\n The medicine stock is low. Consider reordering.")      
 else:
-    print("\n✅ The medicine is in stock.")
+    print("\n The medicine is in stock.")
 print("\n========================================\n")   
-#expiry date check
+
 expiry_date = pd.to_datetime(row["Expiry_Date"])
 today = pd.Timestamp.today()
 
 days_left = (expiry_date - today).days
 
 if days_left < 0:
-    print("❌ Medicine has expired.")
+    print(" Medicine has expired.")
 elif days_left <= 30:
     print(f"⚠ Medicine will expire in {days_left} days.")
 else:
-    print(f"✅ Expiry OK ({days_left} days remaining).")
+    print(f" Expiry OK ({days_left} days remaining).")
 print("\n========================================\n")   
-#expiry date check
+#expiry date checking feature
 if days_left<=0:
-    print("\n⚠️  The medicine has expired.")    
+    print("\n The medicine has expired.")    
 elif days_left<=30:
-    print("\n⚠️  The medicine is nearing its expiry date. Consider using it soon or reordering.")   
+    print("\n The medicine is nearing its expiry date. Consider using it soon or reordering.")   
 else:
-    print("\n✅ The medicine is within its expiry date.")
+    print("\n The medicine is within its expiry date.")
     
