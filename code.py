@@ -15,18 +15,17 @@ df["Medicine_Name"] = df["Medicine_Name"].astype(str).str.strip()
 medicine = input("Enter medicine name: ").strip().lower()
 
 # -------------------------
-# 1. Exact Match
-# -------------------------
+
 result = df[df["Medicine_Name"].str.lower() == medicine]
 
 # -------------------------
-# 2. Partial Match
+# Partial Match
 # -------------------------
 if result.empty:
     result = df[df["Medicine_Name"].str.lower().str.contains(medicine, na=False)]
 
 # -------------------------
-# 3. Fuzzy Match
+# Fuzzy Match
 # -------------------------
 if result.empty:
 
