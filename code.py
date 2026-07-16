@@ -67,7 +67,7 @@ else:
     print("\n Medicine not found.")
 print("\n========================================\n")   
 
-#===================checking the inventory status ===
+#=================-----checking the inventory status ===
 stock = int(row["Stock"])
 reorder_level = int(row["Reorder_Level"])
 price = float(row["Price_NPR"])
