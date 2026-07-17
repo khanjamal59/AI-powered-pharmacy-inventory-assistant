@@ -18,7 +18,7 @@ medicine = input("Enter medicine name: ").strip().lower()
 
 result = df[df["Medicine_Name"].str.lower() == medicine]
 
-# -------------------------
+# ---------------------------------------------
 # Partial Match
 # -------------------------
 if result.empty:
